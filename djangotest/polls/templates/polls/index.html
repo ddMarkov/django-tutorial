@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  {% block title %}<title>DJANGO</title>{% endblock %}
+</head>
+<body>
+    {% block content %}
+       {% if all_questions_list %}
+        <ul>
+            {% for question in all_questions_list %}
+                <li><a href="{% url 'polls:detail' question.id%}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  {% block title %}<title>DJANGO</title>{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <h1>{{ question.question_text }}</h1>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }}: {{ choice.votes }} vote {{ choice.votes|plurarize }}</li>
+        {% endfor %}
+
+    {% endblock %}
+</body>
+</html>
